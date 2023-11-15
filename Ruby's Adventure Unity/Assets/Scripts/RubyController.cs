@@ -29,6 +29,8 @@ public class RubyController : MonoBehaviour
     public AudioClip throwClip;
     public AudioClip hitClip;
 
+    public ParticleSystem takeHit;
+
 
     void Start()
     {
@@ -95,6 +97,8 @@ public class RubyController : MonoBehaviour
         {
             animator.SetTrigger("Hit");
             PlaySound(hitClip);
+            if(!takeHit.isPlaying)
+                takeHit.Play();
             if (isInvincible)
                 return;
             isInvincible = true;

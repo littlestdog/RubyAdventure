@@ -82,6 +82,7 @@ public class EnemyController : MonoBehaviour
     {
         broken = false;
         rigidbody2D.simulated = false;
+        RobotCounter.instance.IncreaseRobots(1);
         animator.SetTrigger("Fixed");
         smokeEffect.Stop();
     }
