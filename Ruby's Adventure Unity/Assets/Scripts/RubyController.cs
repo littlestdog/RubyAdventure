@@ -31,6 +31,8 @@ public class RubyController : MonoBehaviour
 
     public ParticleSystem takeHit;
 
+    public GameObject LoseScreen;
+
 
     void Start()
     {
@@ -106,6 +108,10 @@ public class RubyController : MonoBehaviour
         }
         currentHealth = Mathf.Clamp(currentHealth + amount,0,maxHealth);
         UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
+        if(currentHealth < 1)
+        {
+            LoseScreen.SetActive(true);
+        }
     }
 
     void Launch()

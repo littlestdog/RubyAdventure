@@ -8,6 +8,7 @@ public class RobotCounter : MonoBehaviour
     public static RobotCounter instance;
     public TMP_Text counterText;
     public int currentRobots = 0;
+    public GameObject winScreen;
 
     void Awake()
     {
@@ -15,6 +16,7 @@ public class RobotCounter : MonoBehaviour
     }
     void Start()
     {
+ 
         counterText.text = "Fixed Robots: " + currentRobots.ToString();
     }
 
@@ -22,5 +24,9 @@ public class RobotCounter : MonoBehaviour
     {
         currentRobots += v;
         counterText.text = "Fixed Robots: " + currentRobots.ToString();
+        if( currentRobots > 3)
+        {
+           winScreen.SetActive(true);
+        }
     }
 }
