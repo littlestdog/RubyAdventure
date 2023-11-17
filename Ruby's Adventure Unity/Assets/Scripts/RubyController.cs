@@ -105,9 +105,11 @@ public class RubyController : MonoBehaviour
                 return;
             isInvincible = true;
             invincibleTimer = timeInvincible;
+            takeHit.Stop();
         }
         currentHealth = Mathf.Clamp(currentHealth + amount,0,maxHealth);
         UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
+
         if(currentHealth < 1)
         {
             LoseScreen.SetActive(true);
