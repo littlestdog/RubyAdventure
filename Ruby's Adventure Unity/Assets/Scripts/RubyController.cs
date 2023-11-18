@@ -98,14 +98,13 @@ public class RubyController : MonoBehaviour
         if (amount < 0)
         {
             animator.SetTrigger("Hit");
-            PlaySound(hitClip);
             if(!takeHit.isPlaying)
                 takeHit.Play();
             if (isInvincible)
                 return;
             isInvincible = true;
             invincibleTimer = timeInvincible;
-            takeHit.Stop();
+            PlaySound(hitClip);
         }
         currentHealth = Mathf.Clamp(currentHealth + amount,0,maxHealth);
         UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
