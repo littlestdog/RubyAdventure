@@ -98,7 +98,7 @@ public class RubyController : MonoBehaviour
         if (amount < 0)
         {
             animator.SetTrigger("Hit");
-            if(!takeHit.isPlaying)
+            if(!takeHit.isPlaying && !isInvincible)
                 takeHit.Play();
             if (isInvincible)
                 return;
