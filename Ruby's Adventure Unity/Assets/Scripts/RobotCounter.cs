@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//Coded by Michlle Radcliffe
+
 public class RobotCounter : MonoBehaviour
 {
     public static RobotCounter instance;

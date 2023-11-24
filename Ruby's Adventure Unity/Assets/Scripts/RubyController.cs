@@ -66,11 +66,16 @@ public class RubyController : MonoBehaviour
             if(invincibleTimer < 0)
                 isInvincible = false;
         }
-
+//Coded by Michelle Radcliffe
         if(Input.GetKeyDown(KeyCode.C))
         {
-            Launch();
+            if(CogCount.instance.currentCogs > 0)
+            {
+                Launch();
+                CogCount.instance.DecreaseCogs();
+            }
         }
+            
 
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -81,6 +86,11 @@ public class RubyController : MonoBehaviour
                 if (character != null)
                 {
                     character.DisplayDialog();
+                }
+                DaisyInteract daisy = hit.collider.GetComponent<DaisyInteract>();
+                if (daisy != null)
+                {
+                    daisy.DisplayDialog();
                 }
             }
         }

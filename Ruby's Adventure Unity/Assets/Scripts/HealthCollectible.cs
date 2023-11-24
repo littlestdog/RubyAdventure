@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Coded by Michelle Radcliffe
+
 public class HealthCollectible : MonoBehaviour
 {
     public AudioClip collectedClip;
