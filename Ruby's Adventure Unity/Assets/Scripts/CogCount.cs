@@ -10,7 +10,7 @@ public class CogCount : MonoBehaviour
     public ParticleSystem cogBurst;
     public static CogCount instance;
     public TMP_Text counterText;
-    public int currentCogs = 10;
+    public int currentCogs = 5;
     public AudioClip cogUp;
     AudioSource audioSource;
     
@@ -38,7 +38,7 @@ public class CogCount : MonoBehaviour
         if(!cogBurst.isPlaying)
                 cogBurst.Play();
         PlaySound(cogUp);
-        currentCogs = 10;
+        currentCogs = 5;
         counterText.text = "x " + currentCogs.ToString();
     }
 

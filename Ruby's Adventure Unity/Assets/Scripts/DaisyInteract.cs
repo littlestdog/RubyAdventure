@@ -42,12 +42,12 @@ public class DaisyInteract : MonoBehaviour
         animator.SetTrigger("Daisytalk");
         PlaySound(bark);
         timerDisplay = displayTime;
-        if(CogCount.instance.currentCogs < 10)
+        if(CogCount.instance.currentCogs < 5)
         {
             empty.SetActive(true);
             CogCount.instance.ResetCogs();
         }
-        else if (CogCount.instance.currentCogs == 10)
+        else if (CogCount.instance.currentCogs >= 5)
         {
             full.SetActive(true);
         }
